@@ -7,7 +7,7 @@ A simple dice app, themed after eyemint (my design language)
 ## Installation
 Run the install.sh script or run the following in the terminal
 
-`sudo curl [thing] | sudo bash`
+`sudo curl https://raw.githubusercontent.com/ActuallySandPotNoodles/sanddice/refs/heads/main/install.sh | sudo bash`
 
 The install script will have to be run as root because it places files into the /usr directory
 ## Building
