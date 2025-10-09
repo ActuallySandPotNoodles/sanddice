@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+
+Name=SandDice
+Exec=/usr/bin/sanddice
+Icon=/usr/share/sandpotnoodles/sanddice.png
+
+Comment=A dice app in the eyemint design language
+
+Categories=Utility
+Keywords=mintmix;sandpotnoodles;random;dice;qt6
