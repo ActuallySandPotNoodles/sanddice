@@ -13,7 +13,7 @@ class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("/home/sand/Downloads/sanddice.png"), QtGui.QIcon.Mode.Normal,
+        icon.addPixmap(QtGui.QPixmap("/usr/share/sandpotnoodles/sanddice.png"), QtGui.QIcon.Mode.Normal,
                        QtGui.QIcon.State.Off)
         Form.setWindowIcon(icon)
         Form.resize(647, 420)
