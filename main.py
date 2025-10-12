@@ -8,13 +8,17 @@
 
 from PyQt6 import QtCore, QtGui, QtWidgets
 import random as rand
-
+sysos = "linux"
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("/usr/share/sandpotnoodles/sanddice.png"), QtGui.QIcon.Mode.Normal,
-                       QtGui.QIcon.State.Off)
+        if sysos == "linux":
+            icon.addPixmap(QtGui.QPixmap("/usr/share/sandpotnoodles/sanddice.png"), QtGui.QIcon.Mode.Normal,
+                        QtGui.QIcon.State.Off)
+        elif sysos == "windows":
+            icon.addPixmap(QtGui.QPixmap("C:\\Program Files\\sandpotnoodles\\sanddice\\sanddice.png"), QtGui.QIcon.Mode.Normal,
+                           QtGui.QIcon.State.Off)
         Form.setWindowIcon(icon)
         Form.resize(647, 420)
         Form.setMinimumSize(QtCore.QSize(647, 420))
