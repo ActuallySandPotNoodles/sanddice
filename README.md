@@ -9,6 +9,10 @@ Run the install.sh script or run the following in the terminal
 
 `sudo curl https://raw.githubusercontent.com/ActuallySandPotNoodles/sanddice/refs/heads/main/install.sh | sudo bash`
 
+For aarch64 devices, run:
+
+`sudo curl https://raw.githubusercontent.com/ActuallySandPotNoodles/sanddice/refs/heads/main/install_aarch64.sh | sudo bash`
+
 The install script will have to be run as root because it places files into the /usr directory
 ## Building
 `pip install pyqt6`
