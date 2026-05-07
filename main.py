@@ -8,17 +8,14 @@
 
 from PyQt6 import QtCore, QtGui, QtWidgets
 import random as rand
-sysos = "linux"
+import sandstuff
+valu = int(0)
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
         icon = QtGui.QIcon()
-        if sysos == "linux":
-            icon.addPixmap(QtGui.QPixmap("/usr/share/sandpotnoodles/sanddice.png"), QtGui.QIcon.Mode.Normal,
-                        QtGui.QIcon.State.Off)
-        elif sysos == "windows":
-            icon.addPixmap(QtGui.QPixmap("C:\\Program Files\\sandpotnoodles\\sanddice\\sanddice.png"), QtGui.QIcon.Mode.Normal,
-                           QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap("/usr/share/sandpotnoodles/sanddice.png"), QtGui.QIcon.Mode.Normal,
+                       QtGui.QIcon.State.Off)
         Form.setWindowIcon(icon)
         Form.resize(647, 420)
         Form.setMinimumSize(QtCore.QSize(647, 420))
@@ -70,6 +67,12 @@ class Ui_Form(object):
         self.leastn.setObjectName("leastn")
         self.leastn.setMaximum(999999999)
         self.leastn.setDecimals(0)
+        self.frame = QtWidgets.QFrame(parent=self.tab)
+        self.frame.setGeometry(QtCore.QRect(360, 10, 251, 51))
+        self.frame.setStyleSheet("background-color: rgba(191, 64, 64, 0);")
+        self.frame.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame.setFrameShadow(QtWidgets.QFrame.Shadow.Sunken)
+        self.frame.setObjectName("frame")
         self.lineEdit_2 = QtWidgets.QLineEdit(parent=self.tab)
         self.lineEdit_2.setGeometry(QtCore.QRect(290, 290, 41, 27))
         font = QtGui.QFont()
@@ -290,11 +293,12 @@ class Ui_Form(object):
         self.rollbtnD.clicked.connect(self.assci)
         self.pushButton.clicked.connect(self.ct)
         self.rollbtnB.clicked.connect(self.stringytext)
-
+        #self.bin.clicked.connect(self.setbin)
 
         self.retranslateUi(Form)
         self.tabWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(Form)
+        self.addglow()
     def randnum(self):
         _translate = QtCore.QCoreApplication.translate
         try:
@@ -328,6 +332,13 @@ class Ui_Form(object):
             self.label_6.setText(_translate("Form", "Items (Each seporated by spaces)"))
         except:
             self.label_6.setText(_translate("Form", "Items (Each seporated by spaces), Issue with Items!"))
+    def addglow(self):
+        self.label.setGraphicsEffect(sandstuff.mintglow())
+        self.label_3.setGraphicsEffect(sandstuff.mintglow())
+        self.label_4.setGraphicsEffect(sandstuff.mintglow())
+        self.label_5.setGraphicsEffect(sandstuff.mintglow())
+        self.astring.setGraphicsEffect(sandstuff.mintglow(mtip=3))
+        self.stroutput.setGraphicsEffect(sandstuff.mintglow(mtip=3))
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "SandDice"))
@@ -356,6 +367,7 @@ class Ui_Form(object):
         self.leasta.setValue(97)
         self.astring.setText(_translate("Form", ""))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_4), _translate("Form", "Unicode"))
+
 
 
 if __name__ == "__main__":
