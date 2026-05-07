@@ -9,10 +9,10 @@ echo "Downloading Stuff..."
 mkdir -p /usr/share/sandpotnoodles
 wget https://raw.githubusercontent.com/ActuallySandPotNoodles/sanddice/refs/heads/main/sanddice-new.png -O /usr/share/sandpotnoodles/sanddice.png
 wget https://raw.githubusercontent.com/ActuallySandPotNoodles/sanddice/refs/heads/main/sanddice.desktop -O /usr/share/applications/sanddice.desktop
-if [[ "$ARCH" == "x86_64"* ]]; then
+if [[ "$(uname -m)" == "x86_64" ]]; then
 wget https://github.com/ActuallySandPotNoodles/sanddice/releases/download/v1.1.0/sanddice_x86_64 -O /usr/bin/sanddice
 fi
-if [[ "$ARCH" == "aarch64"* ]]; then
+if [[ "$(uname -m)" == "aarch64" ]]; then
 wget https://github.com/ActuallySandPotNoodles/sanddice/releases/download/v1.1.0/sanddice_aarch64 -O /usr/bin/sanddice
 fi
 chmod 775 /usr/bin/sanddice
