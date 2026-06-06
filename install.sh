@@ -15,5 +15,5 @@ fi
 if [[ "$(uname -m)" == "aarch64" ]]; then
 wget https://github.com/ActuallySandPotNoodles/sanddice/releases/download/v1.1.0/sanddice_aarch64 -O /usr/bin/sanddice-py
 fi
-chmod 775 /usr/bin/sanddice
+chmod 775 /usr/bin/sanddice-py
 echo "Install Complete!"
